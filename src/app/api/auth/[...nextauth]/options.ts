@@ -14,9 +14,8 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials: any): Promise<any> {
         const { email, password } = credentials;
-
+        await connectMongoDB();
         try {
-          await connectMongoDB();
           const user = await User.findOne({ email });
 
           if (!user) {
