@@ -73,13 +73,13 @@ export default function RegisterForm() {
           {error}
         </div>
       )}
-      <div className="space-y-2 text-center  w-[400px]">
+      <div className="space-y-2 text-center  w-[340px]">
         <h1 className="text-3xl font-bold">Register</h1>
         <p className="text-gray-500 dark:text-gray-400">
           Enter your information to create an account
         </p>
       </div>
-      <form onSubmit={handleSubmit} className="space-y-4 w-[350px]">
+      <form onSubmit={handleSubmit} className="space-y-4 w-[340px]">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
           <Input

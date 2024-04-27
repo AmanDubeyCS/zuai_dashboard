@@ -45,13 +45,13 @@ export default function LoginForm() {
           {error}
         </div>
       )}
-      <div className="space-y-2 text-center  w-[400px]">
+      <div className="space-y-2 text-center  w-[340px]">
         <h1 className="text-3xl font-bold">Log In</h1>
         <p className="text-gray-500 dark:text-gray-400">
-          Enter your information to create an account
+          Enter your information to login to your account
         </p>
       </div>
-      <form onSubmit={handleSubmit} className="space-y-4 w-[350px]">
+      <form onSubmit={handleSubmit} className="space-y-4 w-[340px]">
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
           <Input

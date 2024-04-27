@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   DropdownMenuTrigger,
   DropdownMenuLabel,
@@ -17,8 +17,10 @@ import {SearchIcon, HamburgerMenu} from "../../Assets/AllSvg"
 
 export default function Header({ menu }: any) {
   const { data: session } = useSession();
+  const [searchActive, setSearchActive] = useState(false)
   return (
-    <header className="flex lg:h-24 h-16 items-center gap-4 dark:bg-gray-800/40 justify-between">
+    <header>
+      <div className="flex lg:h-24 h-16 items-center gap-4 dark:bg-gray-800/40 justify-between">
       <div
         onClick={() => menu((prev: any) => !prev)}
         className="hidden md:flex lg:hidden"
@@ -27,7 +29,7 @@ export default function Header({ menu }: any) {
       </div>
       <div className="w-full flex-1">
         <form>
-          <div className="hidden md:flex md:ml-7 lg:ml-0 items-center border md:w-[245px] xl:w-[343px] justify-between px-4 rounded-md bg-[#FAFAFA]">
+          <div className={`hidden md:flex md:ml-7 lg:ml-0 items-center border md:w-[245px] xl:w-[343px] justify-between px-4 rounded-md bg-[#FAFAFA]`}>
             <input
               className=" w-full px-4 py-[6px]  bg-transparent shadow-none appearance-none dark:bg-gray-950 border-none outline-none focus-visible:ring-0"
               placeholder="Search..."
@@ -43,15 +45,18 @@ export default function Header({ menu }: any) {
               <HamburgerMenu />
             </div>
 
+            <div onClick={() => setSearchActive((prev)=> !prev)}>
             <SearchIcon
               className="h-4 w-4  text-gray-500 dark:text-gray-400"
               fill="gray"
             />
+            </div>
           </div>
         </form>
       </div>
       <div className="flex w-[364px] items-center justify-end gap-7">
-        <Link href="#">
+        <Link href="#" className="relative">
+          <div className="absolute right-0 w-[10px] h-[10px] bg-red-600 rounded-full border border-white"></div>
           <Notification className="h-4 w-4 sm:w-full sm:h-full hover:fill-orange-600" />
         </Link>
         <Link href="#">
@@ -93,6 +98,19 @@ export default function Header({ menu }: any) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+      </div>
+      
+      <div className={`${searchActive ? "" : "hidden"} mb-4 flex md:ml-7 lg:ml-0 items-center border md:w-[245px] xl:w-[343px] justify-between px-4 rounded-md bg-[#FAFAFA]`}>
+            <input
+              className=" w-full px-4 py-[6px]  bg-transparent shadow-none appearance-none dark:bg-gray-950 border-none outline-none focus-visible:ring-0"
+              placeholder="Search..."
+              type="search"
+            />
+            <SearchIcon
+              className="h-4 w-4 text-gray-500 dark:text-gray-400"
+              fill="gray"
+            />
+          </div>
     </header>
   );
 }

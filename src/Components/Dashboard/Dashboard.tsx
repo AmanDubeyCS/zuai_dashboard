@@ -290,7 +290,7 @@ export default function Dashboard() {
                       </span>
                     </div>
                   </div>
-                  <div className="lg:h-[360px] sm:h-[250px] overflow-scroll">
+                  <div className="lg:h-[360px] h-[250px] overflow-scroll">
                     <div className="flex flex-col gap-2">
                       <div>
                         <span className="text-xs text-[#686868]">Priority</span>
