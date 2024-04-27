@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import {DashboardSvg, Employee, RecruitmentSVG, ScheduleSVG, Support, Department, SettingSVG} from "../../Assets/AllSvg"
+import {DashboardSvg, Employee, RecruitmentSVG, ScheduleSVG, Support, Department, SettingSVG, CloseMenu} from "../../Assets/AllSvg"
 
 interface NavLink {
   name: string;
@@ -21,8 +21,8 @@ const NavLinks = ({ list, title }: NavLinksProps) => {
         {title}
       </span>
       <nav className="grid items-start text-sm font-medium sm:justify-center xl:justify-start">
-        {list.map((link) => (
-          <ul className="flex " onClick={() => setActiveLink(link.name)}>
+        {list.map((link, i) => (
+          <div key={i} className="flex " onClick={() => setActiveLink(link.name)}>
             <Link
               className={`flex items-center gap-6 rounded-lg text-base font-medium py-4 text-gray-500 transition-all hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-50 ${
                 activeLink === link.name ? "text-orange-600" : ""
@@ -33,7 +33,7 @@ const NavLinks = ({ list, title }: NavLinksProps) => {
 
               <span className="sm:hidden xl:flex">{link.name}</span>
             </Link>
-          </ul>
+          </div>
         ))}
       </nav>
     </div>
@@ -107,23 +107,4 @@ export default function Sidebar({ menu }: { menu: any }) {
   );
 }
 
-function CloseMenu() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      className="icon icon-tabler icons-tabler-outline icon-tabler-x"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M18 6l-12 12" />
-      <path d="M6 6l12 12" />
-    </svg>
-  );
-}
+

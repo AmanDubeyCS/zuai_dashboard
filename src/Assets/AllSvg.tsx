@@ -4,27 +4,6 @@ interface svgProps {
   [propName: string]: any;
 }
 
-// export function dropDownSVG(props: svgProps) {
-//   return (
-//     <svg {...props}
-//       {...props}
-//       width="15"
-//       height="7"
-//       viewBox="0 0 15 7"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <path
-//         d="M1.5 1L7.5 6L13.5 1"
-//         stroke="#737898"
-//         stroke-width="2"
-//         stroke-linecap="round"
-//         stroke-linejoin="round"
-//       />
-//     </svg>
-//   );
-// }
-
 export function Pointers({ props, fill }: svgProps) {
   return (
     <svg
@@ -70,8 +49,8 @@ export function UpArrow(props: svgProps) {
       <path
         d="M0.5 2.5L2.5 0.5M2.5 0.5L4.5 2.5M2.5 0.5V7.5"
         stroke="#FF5151"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -108,24 +87,7 @@ export function GraphUpShadeSVG(props: svgProps) {
   );
 }
 
-export function GraphUpSVG(props: svgProps) {
-  return (
-    <svg
-      width="117"
-      height="45"
-      viewBox="0 0 117 45"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M1 43.5C1 43.5 16.2821 25.2086 30 22.5C40.431 20.4403 46.4876 27.5924 57 26C73.2778 23.5342 76.3958 5.92092 92.5 2.50001C101.477 0.593071 115.5 2.49995 115.5 2.49995"
-        stroke="#FF5151"
-        stroke-width="2"
-        stroke-linecap="round"
-      />
-    </svg>
-  );
-}
+
 
 export function DropDownSVG(props: svgProps) {
   return (
@@ -140,9 +102,9 @@ export function DropDownSVG(props: svgProps) {
       <path
         d="M1.5 1L7.5 6L13.5 1"
         stroke="#737898"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -256,8 +218,8 @@ export function RecruitmentSVG(props: svgProps) {
       <path d="M2 4C2 4.79112 2.2346 5.56448 2.67412 6.22228C3.11365 6.88008 3.73836 7.39277 4.46927 7.69552C5.20017 7.99827 6.00444 8.07748 6.78036 7.92314C7.55628 7.7688 8.26902 7.38784 8.82842 6.82843C9.38784 6.26902 9.7688 5.55628 9.92314 4.78036C10.0775 4.00444 9.99827 3.20017 9.69552 2.46927C9.39277 1.73836 8.88008 1.11365 8.22228 0.674121C7.56448 0.234596 6.79112 0 6 0C4.93913 0 3.92172 0.421427 3.17157 1.17157C2.42143 1.92172 2 2.93913 2 4Z" />
       <rect y="10" width="12" height="6" rx="3" />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M16 4H14V6L12 6V8H14V10H16V8H18V6L16 6V4Z"
       />
     </svg>
@@ -297,6 +259,64 @@ export function DashboardSvg(props: svgProps) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M0 10H8V0H0V10ZM0 18H8V12H0V18ZM10 18H18V8H10V18ZM10 0V6H18V0H10Z" />
+    </svg>
+  );
+}
+
+export function SearchIcon({ props, fill }: svgProps) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M14.2307 8.16966C15.9089 9.92708 15.8448 12.7123 14.0874 14.3906C12.3299 16.0688 9.54476 16.0047 7.86647 14.2473C6.18819 12.4898 6.25235 9.70465 8.00977 8.02637C9.76719 6.34809 12.5524 6.41224 14.2307 8.16966ZM16.013 15.2486C18.0243 12.7836 17.9311 9.14871 15.6771 6.78839C13.2359 4.23214 9.18475 4.13883 6.6285 6.57996C4.07225 9.0211 3.97893 13.0723 6.42007 15.6285C8.67409 17.9888 12.3008 18.2493 14.8559 16.3537L16.5476 18.1252C16.8527 18.4447 17.3591 18.4564 17.6787 18.1512C17.9982 17.8461 18.0099 17.3397 17.7047 17.0201L16.013 15.2486Z"
+        fill="#B2B2B2"
+      />
+    </svg>
+  );
+}
+
+export function HamburgerMenu({ props, fill }: svgProps) {
+  return (
+    <svg
+      {...props}
+      width="18"
+      height="12"
+      viewBox="0 0 18 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 12.5H0V10.5H18V12.5ZM18 7.5H0V5.5H18V7.5ZM18 2.5H0V0.5H18V2.5Z"
+        fill="#B2B2B2"
+      />
+    </svg>
+  );
+}
+
+export function CloseMenu() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-x"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 6l-12 12" />
+      <path d="M6 6l12 12" />
     </svg>
   );
 }

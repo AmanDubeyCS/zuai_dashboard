@@ -213,8 +213,8 @@ export default function Dashboard() {
                 </div>
                 <div className="flex flex-col gap-2 md:h-[300px] h-[250px] overflow-scroll">
                   <div className="flex flex-col gap-2">
-                    {announcments.map((list) => (
-                      <div className="flex flex-col sm:flex-row gap-1 justify-between bg-[#FAFAFA] border border-[#E0E0E0] py-2 px-3 rounded-md">
+                    {announcments.map((list, i) => (
+                      <div key={i} className="flex flex-col sm:flex-row gap-1 justify-between bg-[#FAFAFA] border border-[#E0E0E0] py-2 px-3 rounded-md">
                         <div className="flex flex-col gap-1">
                           <h3 className="flex md:w-[380px] text-sm sm:text-base flex-wrap">
                             {list.title}
@@ -295,8 +295,8 @@ export default function Dashboard() {
                       <div>
                         <span className="text-xs text-[#686868]">Priority</span>
                         <div>
-                          {scheduleList?.priority?.map((list) => (
-                            <div className="flex flex-col gap-1 sm:flex-row justify-between bg-[#FAFAFA] border border-[#E0E0E0] py-3 px-4 rounded-md mt-2">
+                          {scheduleList?.priority?.map((list, i) => (
+                            <div key={i} className="flex flex-col gap-1 sm:flex-row justify-between bg-[#FAFAFA] border border-[#E0E0E0] py-3 px-4 rounded-md mt-2">
                               <div>
                                 <h3 className="text-sm md:text-base">
                                   {list.title}
@@ -321,8 +321,8 @@ export default function Dashboard() {
                         <span className="text-xs text-[#686868]">Other</span>
                         <div>
                           <div>
-                            {scheduleList?.other?.map((list) => (
-                              <div className="flex flex-col gap-1 sm:flex-row justify-between bg-[#FAFAFA] border border-[#E0E0E0] py-3 px-4 rounded-md mt-2">
+                            {scheduleList?.other?.map((list, i) => (
+                              <div key={i} className="flex flex-col gap-1 sm:flex-row justify-between bg-[#FAFAFA] border border-[#E0E0E0] py-3 px-4 rounded-md mt-2">
                                 <div>
                                   <h3 className="text-sm md:text-base">
                                     {list.title}
